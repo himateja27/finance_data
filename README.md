@@ -1,53 +1,82 @@
-# Getting Started with Create React App
+# Finance Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React.js frontend application for the Finance Data Processing and Access Control System.
+
+## Features
+
+- **Authentication**: JWT-based login and registration
+- **Dashboard**: Financial overview with analytics and recent activity
+- **Records Management**: View, create, edit, and delete financial records
+- **Budget Tracking**: Set and monitor spending budgets by category
+- **User Management**: Admin interface for managing users and roles
+- **Role-based Access**: Different permissions for viewers, analysts, and admins
+
+## Tech Stack
+
+- React 18
+- React Router DOM
+- Axios for API calls
+- Bootstrap 5 for styling
+- JWT authentication with automatic token refresh
+
+## Getting Started
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+
+   ```bash
+   npm start
+   ```
+
+3. **Open your browser:**
+   Navigate to `http://localhost:3000`
+
+## Backend Requirements
+
+This frontend requires the Django backend to be running on `http://localhost:8000`.
+
+Make sure the backend is started first:
+
+```bash
+cd ../finance_backend
+python manage.py runserver
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm test` - Launches the test runner
+- `npm run eject` - Ejects from Create React App
 
-### `npm start`
+## User Roles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Viewer**: Can view records and basic analytics
+- **Analyst**: Can view records, analytics, and dashboard data
+- **Admin**: Full access including user management and record modifications
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API Integration
 
-### `npm test`
+The app communicates with the Django REST API using:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Automatic JWT token injection in requests
+- Token refresh on expiration
+- Error handling for authentication and permissions
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+├── components/     # Reusable UI components
+├── context/        # React context for authentication
+├── pages/          # Page components
+└── services/       # API service layer
+```
 
 ### Analyzing the Bundle Size
 
